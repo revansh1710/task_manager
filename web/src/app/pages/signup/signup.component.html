@@ -1,0 +1,29 @@
+<div class="centered-content">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card p-5 shadow-effect bg-primary">
+                <div class="card-body">
+                    <div class="text-center">
+                    </div>
+                    <form #loginform=ngForm>
+                        <div class="form-group">
+                            <input #emailInput type="email" class="form-control" placeholder="Email" name="email" #Email="ngModel" ngModel required email [ngClass]="{'is-invalid':Email.touched && Email.invalid}">
+                            <div class="alert alert-danger" *ngIf="Email.touched && Email.invalid">
+                                <div *ngIf="Email.errors?.['required']">Email cannot be empty</div>
+                                <div *ngIf="Email.errors?.['email']">Please enter a valid email address</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input #passwordInput type="password" class="form-control" placeholder="password" name="password" #Password="ngModel" ngModel required password [ngClass]="{'is-invalid':Password.touched && Password.invalid}">
+                            <div class="alert alert-danger" *ngIf="Password.touched && Password.invalid">password cannot be empty</div>
+                        </div>
+                        <button class="btn btn-info btn-block btn-theme" [disabled]="loginform.invalid"(click)="onSignupClick(emailInput.value,passwordInput.value)">Signup</button>
+                        <a routerLink="/login">Already have a account</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

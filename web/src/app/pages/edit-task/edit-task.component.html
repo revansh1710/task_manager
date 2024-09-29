@@ -1,0 +1,11 @@
+<div class="centered-content">
+    <div class="model-box">
+        <h1 class="title"> Edit a Task</h1>
+        <input #taskTitle class="input  is-medium" type="text" placeholder="Enter Task Name">
+        <br><br>
+        <div class="buttons is-right">
+          <button class="button is-medium"routerLink="/lists">Cancel</button>
+          <button class="button is-primary has-text-white is-medium" (click)="updateTask(taskTitle.value)"routerLink="/lists">Save</button>
+        </div>
+    </div>
+</div>
